@@ -1,5 +1,7 @@
 [![](https://jitpack.io/v/resource-makers/plugin-api.svg)](https://jitpack.io/#resource-makers/plugin-api)
 
+[![card](https://stats.maximjsx.com/api/pin-wide/?username=resource-makers&repo=plugin-api&dark_bg=3&height=150&theme=rain&description=Packforge%20plugin%20api&title=Packforge%20API)](https://github.com/resource-makers/plugin-api)
+
 
 # Installation
 
