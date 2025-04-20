@@ -2,8 +2,8 @@
 
 <div align="center">
   <a href="https://jitpack.io/#resource-makers/plugin-api"><img src="https://jitpack.io/v/resource-makers/plugin-api.svg" /></a>
-  <a href="https://adoptium.net/"><img src="https://img.shields.io/badge/Java-17%2B-orange?logo=openjdk" /></a>
-  <a href="https://papermc.io/"><img src="https://img.shields.io/badge/Minecraft%20-1.21.4%2B-yellowgreen" /></a>
+  <a href="https://adoptium.net/"><img src="https://img.shields.io/badge/Java-21%2B-orange?logo=openjdk" /></a>
+  <a href="https://papermc.io/"><img src="https://img.shields.io/badge/Minecraft%20-1.21.4%2B-green" /></a>
 </div>
 
 
