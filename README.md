@@ -1,6 +1,10 @@
-[![](https://jitpack.io/v/resource-makers/plugin-api.svg)](https://jitpack.io/#resource-makers/plugin-api)
+[![card](https://stats.maximjsx.com/api/pin-wide/?username=resource-makers&repo=plugin-api&dark_bg=3&height=150&theme=rain&description=Minecraft%20resource%20management%20API%20for%20Packforge%0ACustom%20%20blocks%2C%20items%2C%20sounds%20%26%20fonts&title=Packforge%20API)](https://github.com/resource-makers/plugin-api)
 
-[![card](https://stats.maximjsx.com/api/pin-wide/?username=resource-makers&repo=plugin-api&dark_bg=3&height=150&theme=rain&description=Packforge%20plugin%20api&title=Packforge%20API)](https://github.com/resource-makers/plugin-api)
+<div align="center">
+  <a href="https://jitpack.io/#resource-makers/plugin-api"><img src="https://jitpack.io/v/resource-makers/plugin-api.svg" /></a>
+  <a href="https://adoptium.net/"><img src="https://img.shields.io/badge/Java-17%2B-orange?logo=openjdk" /></a>
+  <a href="https://papermc.io/"><img src="https://img.shields.io/badge/Minecraft%20-1.21.4%2B-yellowgreen" /></a>
+</div>
 
 
 # Installation
@@ -39,9 +43,14 @@ dependencies {
 ```
 
 ## Overview
-  The Packforge API provides functionality for custom blocks, items, sounds and fonts.
-Retrieve the API instance using:
 
+## Features
+- **Resource Management**: Central cache for custom blocks, items, fonts, and sounds
+- **Custom Events**: Cancellable interactions for custom blocks and items
+- **Runtime Utilities**: ItemStack generation, sound playback, and block placement
+  
+
+### API Initialization
   ```java
   Actions packforge = Packforge.getPackforge();
   ```
@@ -55,11 +64,14 @@ Retrieve the API instance using:
   ```
   
   **Get objects:**
-  ```java
-  Block customBlock = packforge.getBlock("lock_amethyst");
-  Item customItem = packforge.getItem("key_amethyst");
-  Sound customSound = packforge.getSound("test_sound");
-  ```
+    ```java
+    Block block = api.getBlock("lock_amethyst");
+    Item item = api.getItem(142);
+    Font font = api.getFont("custom_font");
+    Sound sound = api.getSound("test_sound");
+
+    List<Item> allItems = api.getItems();
+    ```
   
   **ItemStack creation and manipulation:**
   ```java
@@ -70,7 +82,7 @@ Retrieve the API instance using:
   
   **Player interaction:**
   ```java
-  packforge.addToInventory(player, customItem);
+  packforge.addToInventory(player, customItem, 5 /*optional amount*/);
   packforge.playSound(customSound, player);
   ```
   
@@ -79,28 +91,35 @@ Retrieve the API instance using:
   packforge.placeBlock(location, customBlock);
   ```
 
-# Events
+---
 
-#### CustomBlockBreakEvent (Cancellable)
-- Block getBlock()
-- Block getCustomBlock()
-- Player getPlayer()
+## Events
 
-#### CustomBlockInteractEvent
-- Block getBlock()
-- Block getCustomBlock()
-- Action getAction()
-- Player getPlayer()
+### CustomBlockBreakEvent *(Cancellable)*
+```java
+@EventHandler
+public void onBlockBreak(CustomBlockBreakEvent e) {
+    if (e.getCustomBlock().getName().equals("protected_block")) {
+        e.setCancelled(true);
+    }
+}
+```
+- **Methods**: `getBlock()`, `getCustomBlock()`, `getPlayer()`
 
-#### CustomBlockPlaceEvent (Cancellable)
-- Block getBlock()
-- BlockState getReplacedBlockState()
-- Block getCustomBlock()
-- Player getPlayer()
+### CustomBlockInteractEvent
+- **Methods**: `getBlock()`, `getCustomBlock()`, `getAction()`, `getPlayer()`
 
-#### CustomItemInteractEvent (Cancellable)
+### CustomBlockPlaceEvent *(Cancellable)*
+- **Methods**: `getBlock()`, `getReplacedBlockState()`, `getCustomBlock()`, `getPlayer()`
 
-- Player getPlayer()
-- ItemStack getItemStack()
-- Item getCustomItem()
-- Action getAction()
+### CustomItemInteractEvent *(Cancellable)*
+```java
+@EventHandler
+public void onItemInteract(CustomItemInteractEvent e) {
+    if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+        e.setCancelled(true);
+    }
+}
+```
+- **Methods**: `getPlayer()`, `getItemStack()`, `getCustomItem()`, `getAction()`
+
