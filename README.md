@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.github.resource-makers:plugin-api:1.0.0.1")
+    compileOnly("com.github.resource-makers:plugin-api:1.0.0.1")
 }
 ```
 
@@ -31,6 +31,7 @@ dependencies {
         <groupId>com.github.resource-makers</groupId>
         <artifactId>plugin-api</artifactId>
         <version>1.0.0.1</version>
+        <scope>provided</scope>
     </dependency>
 </dependencies>
 ```
