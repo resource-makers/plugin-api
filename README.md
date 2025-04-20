@@ -51,45 +51,45 @@ dependencies {
   
 
 ### API Initialization
-  ```java
-  Actions packforge = Packforge.getPackforge();
-  ```
+```java
+Actions packforge = Packforge.getPackforge();
+```
 
 ## Basic Usage
 
-  **Check existence:**
-  ```java
-  boolean blockExists = packforge.blockExists("lock_amethyst");
-  boolean itemExists = packforge.itemExists("key_amethyst");
-  ```
+**Check existence:**
+```java
+boolean blockExists = packforge.blockExists("lock_amethyst");
+boolean itemExists = packforge.itemExists("key_amethyst");
+```
   
-  **Get objects:**
-    ```java
-    Block block = api.getBlock("lock_amethyst");
-    Item item = api.getItem(142);
-    Font font = api.getFont("custom_font");
-    Sound sound = api.getSound("test_sound");
+**Get objects:**
+```java
+Block block = api.getBlock("lock_amethyst");
+Item item = api.getItem(142);
+Font font = api.getFont("custom_font");
+Sound sound = api.getSound("test_sound");
 
-    List<Item> allItems = api.getItems();
-    ```
+List<Item> allItems = api.getItems();
+```
   
-  **ItemStack creation and manipulation:**
-  ```java
-  ItemStack blockItem = packforge.getItemStack(customBlock);
-  ItemStack itemStack = packforge.getItemStack(customItem);
-  packforge.applyItemProperties(existingItemStack, customItem);
-  ```
+**ItemStack creation and manipulation:**
+```java
+ItemStack blockItem = packforge.getItemStack(customBlock);
+ItemStack itemStack = packforge.getItemStack(customItem);
+packforge.applyItemProperties(existingItemStack, customItem);
+```
   
-  **Player interaction:**
-  ```java
-  packforge.addToInventory(player, customItem, 5 /*optional amount*/);
-  packforge.playSound(customSound, player);
-  ```
+**Player interaction:**
+```java
+packforge.addToInventory(player, customItem, 5 /*optional amount*/);
+packforge.playSound(customSound, player);
+```
   
-  **Block placement:**
-  ```java
-  packforge.placeBlock(location, customBlock);
-  ```
+**Block placement:**
+```java
+packforge.placeBlock(location, customBlock);
+```
 
 ---
 
