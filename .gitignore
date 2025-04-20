@@ -11,7 +11,8 @@ build/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
-.idea/  # Make sure this line is present and unambiguous
+.idea/
+.idea
 
 ### Eclipse ###
 .apt_generated
@@ -37,3 +38,4 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+/.idea/
