@@ -18,7 +18,7 @@ public class ResourcePackData {
 
     @Builder.Default
     @SerializedName("pack")
-    private Pack pack;
+    private Pack pack = null;
 
     @Builder.Default
     @SerializedName("blocks")
