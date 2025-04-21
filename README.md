@@ -18,7 +18,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly("com.github.resource-makers:plugin-api:1.0.0.1")
+    compileOnly("com.github.resource-makers:plugin-api:1.0.2")
 }
 ```
 
@@ -36,7 +36,7 @@ dependencies {
     <dependency>
         <groupId>com.github.resource-makers</groupId>
         <artifactId>plugin-api</artifactId>
-        <version>1.0.0.1</version>
+        <version>1.0.2</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
