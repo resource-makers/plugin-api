@@ -15,7 +15,7 @@ public class Item extends BaseModel {
     private String material;
     
     @SerializedName("custom_model_data")
-    private int customModelData;
+    private String customModelData;
 
     @SerializedName("category_id")
     private Integer categoryId;
