@@ -49,4 +49,5 @@ public interface Actions {
     org.bukkit.block.Block placeBlock(Location location, Block block);
     org.bukkit.block.Block placeBlock(Location location, Block block, Player placer);
 
+    void createBossbar(Player player, String text);
 }
