@@ -11,4 +11,6 @@ import zip.packforge.api.model.BaseModel;
 @NoArgsConstructor
 public class Pack extends BaseModel {
     private String namespace;
+    @SerializedName("pack_version")
+    private String packVersion;
 }
