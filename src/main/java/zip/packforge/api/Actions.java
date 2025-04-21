@@ -4,10 +4,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import zip.packforge.api.data.ResourcePackCache;
-import zip.packforge.api.model.impl.Block;
-import zip.packforge.api.model.impl.Font;
-import zip.packforge.api.model.impl.Item;
-import zip.packforge.api.model.impl.Sound;
+import zip.packforge.api.model.impl.*;
 
 public interface Actions {
     ResourcePackCache cache();
@@ -25,6 +22,9 @@ public interface Actions {
     boolean fontExists(String name);
     boolean soundExists(int id);
     boolean soundExists(String name);
+
+    default Pack getPack() { return cache().getPack(); }
+    default String getNamespace() { return getPack().getNamespace(); }
 
     Item getItem(int id);
     Item getItem(String name);

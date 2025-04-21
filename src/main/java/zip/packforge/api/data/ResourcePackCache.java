@@ -8,6 +8,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 @Getter
 public class ResourcePackCache {
+
+    private Pack pack;
+
     private final List<Block> blocks = new CopyOnWriteArrayList<>();
     private final List<Item> items = new CopyOnWriteArrayList<>();
     private final List<Font> fonts = new CopyOnWriteArrayList<>();
@@ -15,12 +18,14 @@ public class ResourcePackCache {
     private final List<Category> categories = new CopyOnWriteArrayList<>();
 
     public void loadData(ResourcePackData data) {
+        pack = null;
         blocks.clear();
         items.clear();
         fonts.clear();
         sounds.clear();
         categories.clear();
 
+        pack = data.getPack();
         blocks.addAll(data.getBlocks());
         items.addAll(data.getItems());
         fonts.addAll(data.getFonts());

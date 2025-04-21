@@ -15,6 +15,11 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResourcePackData {
+
+    @Builder.Default
+    @SerializedName("pack")
+    private Pack pack;
+
     @Builder.Default
     @SerializedName("blocks")
     private List<Block> blocks = new ArrayList<>();
