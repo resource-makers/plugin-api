@@ -11,7 +11,6 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 public class Sound extends BaseModel {
-    private String description;
 
     private double volume;
     private double pitch;
